@@ -1,0 +1,84 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+---
+
+<Layout title="Matthieu Caron - Frontend developer">
+  <h1>
+    Design System – <span>Boto</span>
+  </h1>
+  <p class="intro">
+    As part of the Design System team, I participate to the conception of the
+    new design system of Synapse. His name is Boto
+  </p>
+  <hr />
+  <h2 id="works">Works</h2>
+  waiting for content here!
+  <div class="container">
+    <Card
+      href="#"
+    />
+    <Card
+      href="#"
+    />
+  </div>
+</Layout>
+
+<style>
+  h1,
+  h2 {
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+
+  h1 {
+    font-weight: 600;
+  }
+
+  h1 > span {
+    font-weight: 400;
+  }
+
+  h2 {
+    font-weight: 500;
+  }
+
+  .link-card-grid {
+    display: grid;
+    gap: 2.5rem;
+    padding: 0;
+  }
+
+  hr {
+    border-width: 0px;
+    height: 1px;
+    background-color: rgba(var(--fg-color), 0.085);
+    display: block;
+    width: 100%;
+    margin: 3rem 0;
+  }
+
+  .intro {
+    font-weight: 400;
+    color: var(--text-color);
+  }
+
+  .intro > strong {
+    font-weight: 500;
+  }
+
+  #works {
+    margin-bottom: 1.5rem;
+  }
+
+  .img-shadow {
+    max-width: 100%;
+    filter: drop-shadow(0px 2px 28px rgba(34, 45, 57, 0.05));
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+</style>
