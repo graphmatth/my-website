@@ -1,6 +1,6 @@
 # My website
 
-A small website made with Astro.
+My small website made with Astro.
 
 ## Commands
 
