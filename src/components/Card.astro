@@ -1,7 +1,7 @@
 ---
 interface Props {
   title?: string;
-  href: string;
+  href?: string;
 }
 
 const { href, title } = Astro.props;
@@ -9,17 +9,31 @@ const { href, title } = Astro.props;
 
 <li>
   {
-    title && (
-      <a href={href} class="title-card">
-        {title}
+    title &&
+      (href ? (
+        <a href={href} class="title-card">
+          {title}
+        </a>
+      ) : (
+        <span class="title-card">{title}</span>
+      ))
+  }
+
+  {
+    href ? (
+      <a href={href} class="link-card">
+        <figure>
+          <slot />
+        </figure>
       </a>
+    ) : (
+      <div class="link-card">
+        <figure>
+          <slot />
+        </figure>
+      </div>
     )
   }
-  <a href={href} class="link-card">
-    <figure>
-      <slot />
-    </figure>
-  </a>
 </li>
 <style>
   .link-card {
@@ -57,5 +71,11 @@ const { href, title } = Astro.props;
     padding: 1rem;
     gap: 1rem;
     align-items: flex-end;
+  }
+
+  @media (max-width: 768px) {
+    figure {
+      align-items: center;
+    }
   }
 </style>

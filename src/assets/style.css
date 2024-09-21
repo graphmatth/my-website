@@ -1,0 +1,226 @@
+/* -------------------------------------------------------------------
+  1. Variables
+------------------------------------------------------------------- */
+:root {
+  --white: #fff;
+  --black: #151515;
+  --background: var(--white);
+  --background-card: #f8f8f8;
+  --text-color: var(--black);
+  --fg-grey-color: 80, 78, 78;
+  --fg-color: 0, 0, 0;
+  transition: background-color 0.1s;
+
+  /* Typo */
+  font-family: DMSansVariable, sans-serif;
+  font-feature-settings:
+    "liga" 1,
+    "calt" 1;
+}
+
+html.dark {
+  color: #fff;
+  --background: var(--black);
+  --background-card: #3a3a3a;
+  --text-color: #dadada;
+  --fg-grey-color: 218, 218, 218;
+  --fg-color: 255, 255, 255;
+}
+
+/* -------------------------------------------------------------------
+  2. Font-face and Fonts
+------------------------------------------------------------------- */
+@font-face {
+  font-family: DMSansVariable;
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("fonts/DMSans[opsz,wght].woff2") format("woff2");
+}
+
+@supports (font-variation-settings: normal) {
+  :root {
+    font-family: DMSansVariable, sans-serif;
+  }
+}
+
+/* -------------------------------------------------------------------
+    3. Global Styles and Resets
+  ------------------------------------------------------------------- */
+
+* {
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+html,
+body {
+  background-color: var(--background);
+}
+
+ul {
+  margin: 0;
+  padding-inline-start: 0;
+}
+
+li {
+  list-style: none;
+}
+
+/* -------------------------------------------------------------------
+  4. Text Elements (h1, h2, p, etc.)
+------------------------------------------------------------------- */
+h1,
+h2 {
+  line-height: 1;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+h1 > span {
+  font-weight: 400;
+}
+
+pre {
+  padding: 0.75rem;
+  border: 2px solid var(--background-card);
+  border-radius: 8px;
+  margin-bottom: 0;
+  overflow-x: auto;
+}
+
+hr {
+  border-width: 0px;
+  height: 1px;
+  background-color: rgba(var(--fg-color), 0.085);
+  width: 100%;
+  margin: 3rem 0;
+}
+
+/* -------------------------------------------------------------------
+  5. Images and Media
+------------------------------------------------------------------- */
+img,
+picture {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  height: auto;
+}
+
+.img-shadow {
+  filter: drop-shadow(0px 2px 28px rgba(34, 45, 57, 0.05));
+}
+
+.svg-ds {
+  --bg: #dadada;
+  --primary: var(--text-color);
+  --secondary: #727272;
+  min-height: 24rem;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.dark .svg-ds {
+  --bg: #696969;
+  --primary: var(--text-color);
+  --secondary: var(--text-color);
+  color: #fff;
+}
+
+/* -------------------------------------------------------------------
+  6. Layout (Main, Nav, Footer, etc.)
+------------------------------------------------------------------- */
+main,
+nav,
+footer {
+  margin: auto;
+  padding: 1rem;
+  max-width: 800px;
+  width: 100%;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+}
+
+nav ul {
+  display: flex;
+  gap: 0.2rem;
+}
+
+footer {
+  border-top: 1px solid rgba(var(--fg-color), 0.085);
+  padding-top: 2.5rem;
+  margin-top: 2.5rem;
+}
+
+footer li {
+  color: var(--text-color);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* -------------------------------------------------------------------
+  6. Overide Shiki theme
+/* ----------------------------------------------------------------- */
+
+@media (prefers-color-scheme: dark) {
+  .astro-code,
+  .astro-code span {
+    color: var(--shiki-dark);
+    background-color: var(--shiki-dark-bg);
+    font-style: var(--shiki-dark-font-style);
+    font-weight: var(--shiki-dark-font-weight);
+    text-decoration: var(--shiki-dark-text-decoration);
+  }
+}
+
+html.dark .astro-code,
+html.dark .astro-code span {
+  color: var(--shiki-dark);
+  background-color: var(--black);
+  font-style: var(--shiki-dark-font-style);
+  font-weight: var(--shiki-dark-font-weight);
+  text-decoration: var(--shiki-dark-text-decoration);
+}
+
+html .astro-code,
+html .astro-code span {
+  color: var(--shiki-light);
+  background-color: var(--shiki-light-bg);
+  font-style: var(--shiki-light-font-style);
+  font-weight: var(--shiki-light-font-weight);
+  text-decoration: var(--shiki-light-text-decoration);
+}
+
+/* -------------------------------------------------------------------
+  7. utils
+/* ----------------------------------------------------------------- */
+
+.show-mobile {
+  display: none;
+}
+
+@media (max-width: 590px) {
+  .hide-mobile {
+    display: none;
+  }
+
+  .show-mobile {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .hide-tablet {
+    display: none;
+  }
+}

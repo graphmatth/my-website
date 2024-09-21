@@ -18,35 +18,28 @@ import designSystem03 from "../assets/design-system/ds-modal.svg";
     websites.
   </p>
   <hr />
-  <h2 id="works" class="works-title">Works</h2>
+  <h2 id="works" class="works-title">Selected Works</h2>
   <ul role="list" class="link-card-grid">
-    <Card
-      href="/design-system"
-      title="Synapse Design System"
-      body="Learn how Astro works and explore the official API docs."
-    >
-    <!-- Display on desktop / tablet / mobile view -->
+    <Card href="/design-system" title="Synapse Design System">
       <Image
         src={designSystem03}
         class="img-shadow"
         alt="date picker component"
       />
-        <!-- Display on desktop / tablet view -->
-      <Image src={designSystem01} class="img-shadow" alt="select component" />
-        <!-- Display on desktop view -->
-      <Image src={designSystem02} class="img-shadow" alt="modal component" />
+      <Image
+        src={designSystem01}
+        class="hide-mobile img-shadow"
+        alt="select component"
+      />
+      <Image
+        src={designSystem02}
+        class="hide-tablet img-shadow"
+        alt="modal component"
+      />
     </Card>
 
-    <Card
-      href="/goodmed"
-      title="Goodmed"
-      body="Supercharge your project with new frameworks and libraries."
-    />
-    <Card
-      href="/goodmed-website"
-      title="Goodmed website"
-      body="Supercharge your project with new frameworks and libraries."
-    />
+    <Card href="/goodmed" title="Goodmed" />
+    <Card href="/goodmed-website" title="Goodmed website" />
   </ul>
 </Layout>
 
@@ -63,10 +56,6 @@ import designSystem03 from "../assets/design-system/ds-modal.svg";
 
   h1 {
     font-weight: 600;
-  }
-
-  h1 > span {
-    font-weight: 400;
   }
 
   h2 {
