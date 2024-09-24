@@ -6,6 +6,9 @@ import { Image } from "astro:assets";
 import designSystem01 from "../assets/design-system/ds-datepicker.svg";
 import designSystem02 from "../assets/design-system/ds-select.svg";
 import designSystem03 from "../assets/design-system/ds-modal.svg";
+
+import goodmed04 from "../assets/goodmed/goodmed-app.png";
+import goodmedWebsite from "../assets/goodmed-website/goodmed-website.png";
 ---
 
 <Layout title="Matthieu Caron - Frontend developer">
@@ -21,25 +24,53 @@ import designSystem03 from "../assets/design-system/ds-modal.svg";
   <h2 id="works" class="works-title">Selected Works</h2>
   <ul role="list" class="link-card-grid">
     <Card href="/design-system" title="Synapse Design System">
+      <div
+        style={{
+          display: "flex",
+          alignItems: "flex-end",
+          gap: "1rem",
+          padding: "1rem 1rem",
+        }}
+      >
+        <Image
+          src={designSystem03}
+          class="img-shadow"
+          alt="date picker component"
+        />
+        <Image
+          src={designSystem01}
+          class="hide-mobile img-shadow"
+          alt="select component"
+        />
+        <Image
+          src={designSystem02}
+          class="hide-tablet img-shadow"
+          alt="modal component"
+        />
+      </div>
+    </Card>
+
+    <Card
+      href="https://app.adjust.com/priy09i?campaign=Website-2022&adgroup=General&creative=CTA"
+      title="Goodmed"
+      external
+    >
       <Image
-        src={designSystem03}
-        class="img-shadow"
-        alt="date picker component"
-      />
-      <Image
-        src={designSystem01}
-        class="hide-mobile img-shadow"
-        alt="select component"
-      />
-      <Image
-        src={designSystem02}
-        class="hide-tablet img-shadow"
-        alt="modal component"
+        style="width: auto"
+        src={goodmed04}
+        alt="3 screenshots of the Goodmed application"
       />
     </Card>
 
-    <Card href="/goodmed" title="Goodmed" />
-    <Card href="/goodmed-website" title="Goodmed website" />
+    <Card href="https://goodmed.com" title="Goodmed website" external>
+      <div class="gmed-website-container">
+        <Image
+          src={goodmedWebsite}
+          class="img-shadow"
+          alt="The homepage of the Goodmed Website"
+        />
+      </div>
+    </Card>
   </ul>
 </Layout>
 
@@ -64,7 +95,7 @@ import designSystem03 from "../assets/design-system/ds-modal.svg";
 
   .link-card-grid {
     display: grid;
-    gap: 2.5rem;
+    gap: 3.5rem;
     padding: 0;
   }
 
@@ -93,5 +124,22 @@ import designSystem03 from "../assets/design-system/ds-modal.svg";
   .img-shadow {
     max-width: 100%;
     filter: drop-shadow(0px 2px 28px rgba(34, 45, 57, 0.05));
+  }
+  figure img {
+    height: 100%;
+    display: flex;
+    flex: 1;
+    object-fit: contain;
+  }
+
+  .gmed-website-container {
+    padding: 2.25rem;
+    @media (max-width: 768px) {
+      padding: 0;
+    }
+
+    img {
+      border-radius: 8px
+    }
   }
 </style>
