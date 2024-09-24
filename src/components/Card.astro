@@ -2,17 +2,38 @@
 interface Props {
   title?: string;
   href?: string;
+  external?: boolean;
 }
 
-const { href, title } = Astro.props;
+const { href, title, external } = Astro.props;
 ---
 
 <li>
   {
     title &&
       (href ? (
-        <a href={href} class="title-card">
-          {title}
+        <a
+          href={href}
+          class="title-card"
+          target={external ? "_blank" : "_self"}
+        >
+          {title}{" "}
+          {external && (
+            <svg
+              width="15"
+              height="15"
+              viewBox="0 0 15 15"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M3.64645 11.3536C3.45118 11.1583 3.45118 10.8417 3.64645 10.6465L10.2929 4L6 4C5.72386 4 5.5 3.77614 5.5 3.5C5.5 3.22386 5.72386 3 6 3L11.5 3C11.6326 3 11.7598 3.05268 11.8536 3.14645C11.9473 3.24022 12 3.36739 12 3.5L12 9.00001C12 9.27615 11.7761 9.50001 11.5 9.50001C11.2239 9.50001 11 9.27615 11 9.00001V4.70711L4.35355 11.3536C4.15829 11.5488 3.84171 11.5488 3.64645 11.3536Z"
+                fill="currentColor"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+              />
+            </svg>
+          )}
         </a>
       ) : (
         <span class="title-card">{title}</span>
@@ -21,7 +42,7 @@ const { href, title } = Astro.props;
 
   {
     href ? (
-      <a href={href} class="link-card">
+      <a target={external ? "_blank" : "_self"} href={href} class="link-card">
         <figure>
           <slot />
         </figure>
@@ -51,7 +72,12 @@ const { href, title } = Astro.props;
     color: rgb(var(--fg-grey-color));
     text-decoration: none;
     display: inline-flex;
+    align-items: center;
     margin-bottom: 1rem;
+
+    &:hover {
+      text-decoration: underline;
+    }
 
     &:focus {
       outline: 2px solid rgba(var(--fg-grey-color), 0.1);
@@ -62,15 +88,16 @@ const { href, title } = Astro.props;
   figure {
     width: 100%;
     margin: 0;
+    max-height: 28rem;
     min-height: 340px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     background-color: var(--background-card);
     border-radius: 8px;
-    padding: 1rem;
+    padding: 0rem 1rem;
     gap: 1rem;
-    align-items: flex-end;
+    align-items: center;
   }
 
   @media (max-width: 768px) {
