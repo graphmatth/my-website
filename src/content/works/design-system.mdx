@@ -1,6 +1,7 @@
 ---
 title: "Design System"
 draft: false
+stack: ["React JS", "Css-in-Js", "Storybook", "Jest"]
 ---
 
 import Card from "../../components/Card.astro";
@@ -16,7 +17,11 @@ import designSystem03 from "../../assets/design-system/ds-modal.svg";
   design system for Synapse. His name is Boto
 </p>
 
-<p>Stack : React JS / Css-in-Js / Storybook / Jest</p>
+<div class="tag-container">
+  {frontmatter.stack.map((item, index) => (
+    <span class="tag" key={index}>{item}</span>
+  ))}
+</div>
 <hr />
 <p>Here are some of the key technical decisions that were made :</p>
 
@@ -330,7 +335,7 @@ import designSystem03 from "../../assets/design-system/ds-modal.svg";
 ```
 
   </section>
-      <section>
+  <section>
       <h3>CSS-in-JS</h3>
       <p>
         We chose a CSS-in-JS solution because it provides scoped and modular
@@ -348,6 +353,16 @@ import designSystem03 from "../../assets/design-system/ds-modal.svg";
     <Image src={designSystem01} class="hide-mobile img-shadow" alt=" select component" />
     <Image src={designSystem02} class="hide-tablet  img-shadow" alt="modal component" />
   </Card>
+  </section>
+  <section>
+        <h3>Accesibility</h3>
+        <p>
+        We had a strong focus on accesibility to make sure that all components are usable by as many people as possible, including individuals with disabilities.
+        To achieve this, we follow best practices such as adhering to the W3C best practices.
+        Each component is designed to support keyboard navigation, providing clear focus states for interactive elements.
+        Semantic HTML tags are used to ensure that screen readers can correctly interpret the content. Additionally, we incorporate ARIA attributes where necessary to enhance assistive technology support.
+        </p>
+
   </section>
 
   <section>
@@ -370,6 +385,21 @@ import designSystem03 from "../../assets/design-system/ds-modal.svg";
   --spacing-1: 4px;
   --spacing-2: 8px;
   --spacing-3: 12px;
+  /* etc... */
+
+  --font-family-primary: "Inter-regular";
+  --font-family-secondary: "Graphik-regular";
+  --font-family-tertiary: "Graphik-regular";
+  /* etc... */
+
+  --text-25: calc(1 / 16 * 10rem);
+  --text-50: calc(1 / 16 * 12rem);
+  --text-75: calc(1 / 16 * 14rem);
+  /* etc... */
+
+  --h1-size: var(--text-200);
+  --h2-size: var(--text-175);
+  --h3-size: var(--text-150);
   /* etc... */
 }
 ```
