@@ -26,11 +26,8 @@ const metaDescription = description || "Portfolio of Matthieu Caron";
 
     <meta content={metaDescription} name="description" />
     <meta content={metaDescription} property="og:description" />
-    <meta
-      content={metaDescription}
-      property="twitter:description"
-    />
-    
+    <meta content={metaDescription} property="twitter:description" />
+
     <meta content="https://matthieucaron.fr/og-image.jpg" property="og:image" />
     <meta
       content="https://matthieucaron.fr/og-image.jpg"
@@ -38,6 +35,22 @@ const metaDescription = description || "Portfolio of Matthieu Caron";
     />
     <meta property="og:type" content="website" />
     <meta content="summary_large_image" name="twitter:card" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CreativeWork",
+        "name": "Portfolio of Matthieu Caron",
+        "creator": {
+          "@type": "Person",
+          "name": "Matthieu Caron"
+        },
+        "description": "My frontend portfolio using Astro",
+        "dateCreated": "2024-10-01",
+        "url": "https://matthieucaron.fr",
+        "image": "https://matthieucaron.fr/og-image.jpg"
+      }
+    </script>
   </head>
   <body>
     <!-- TO DO, Astro component <Nav />  -->
