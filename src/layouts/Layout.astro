@@ -1,20 +1,43 @@
 ---
 interface Props {
-  title: string;
+  title?: string;
+  description?: string;
 }
 
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 import "../assets/style.css";
+
+const metaTitle = title || "Matthieu Caron - Frontend developer";
+const metaDescription = description || "Portfolio of Matthieu Caron";
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>{title}</title>
+
+    <title>{metaTitle}</title>
+    <meta name="description" content={metaDescription} />
+    <meta name="generator" content={Astro.generator} />
+    <meta content={metaTitle} property="og:title" />
+    <meta content={metaTitle} property="twitter:title" />
+
+    <meta content={metaDescription} name="description" />
+    <meta content={metaDescription} property="og:description" />
+    <meta
+      content={metaDescription}
+      property="twitter:description"
+    />
+    
+    <meta content="https://matthieucaron.fr/og-image.jpg" property="og:image" />
+    <meta
+      content="https://matthieucaron.fr/og-image.jpg"
+      property="twitter:image"
+    />
+    <meta property="og:type" content="website" />
+    <meta content="summary_large_image" name="twitter:card" />
   </head>
   <body>
     <!-- TO DO, Astro component <Nav />  -->
@@ -74,50 +97,88 @@ import "../assets/style.css";
     <!-- TO DO, Astro component <Footer />  -->
     <footer>
       <h3>Connect</h3>
-      <ul>
+      <ul class="footer-links">
         <!-- TO DO, Add Links to each social networks / file(s)  -->
-        <li>mail</li>
-        <li>X</li>
-        <li>github</li>
-        <li>linkedin</li>
-        <li>read cv</li>
-        <li>resume</li>
+        <li><a href="mailto:matthieu.caron.pro@gmail.com">Mail</a></li>
+        <li>
+          <a
+            href="https://x.com/graphmatth"
+            target="_blank"
+            rel="noopener noreferrer">Twitter / X</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://github.com/graphmatth"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Github
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.linkedin.com/in/matthieu-caron/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Linkedin
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://read.cv/graphmatth"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Read.cv
+          </a>
+        </li>
       </ul>
     </footer>
+
+    <script>
+      import { initThemeToggle } from "./themeToggle.ts";
+      document.addEventListener("DOMContentLoaded", initThemeToggle);
+    </script>
+
+    <style>
+      .home-icon {
+        width: 1rem;
+        height: 1rem;
+        background-color: rgb(var(--fg-color));
+        border-radius: 1rem;
+      }
+
+      .toggle-theme button {
+        background-color: transparent;
+        border: 0;
+        cursor: pointer;
+        color: rgb(var(--fg-color));
+        opacity: 0.45;
+        padding: 0.5rem;
+        display: inline-flex;
+        align-items: center;
+        border-radius: 4px;
+      }
+
+      .toggle-theme button.active {
+        opacity: 1;
+        border: 1px solid rgba(var(--fg-grey-color), 0.3);
+      }
+
+      .toggle-theme button:hover {
+        background-color: var(--background-card);
+      }
+
+      .footer-links {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        & a {
+          color: var(--fg-color);
+        }
+      }
+    </style>
   </body>
 </html>
-
-<script>
-  import { initThemeToggle } from "./themeToggle.ts";
-  document.addEventListener("DOMContentLoaded", initThemeToggle);
-</script>
-
-<style>
-  .home-icon {
-    width: 1rem;
-    height: 1rem;
-    background-color: rgb(var(--fg-color));
-    border-radius: 1rem;
-  }
-
-  .toggle-theme button {
-    background-color: transparent;
-    border: 0;
-    cursor: pointer;
-    color: rgb(var(--fg-color));
-    opacity: 0.45;
-    padding: 0.5rem;
-    display: inline-flex;
-    align-items: center;
-    border-radius: 4px;
-  }
-
-  .toggle-theme button.active {
-    opacity: 1;
-    border: 1px solid rgba(var(--fg-grey-color), 0.3);
-  }
-
-  .toggle-theme button:hover {
-    background-color: var(--background-card);
-  }
-</style>

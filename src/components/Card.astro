@@ -42,7 +42,7 @@ const { href, title, external } = Astro.props;
 
   {
     href ? (
-      <a target={external ? "_blank" : "_self"} href={href} class="link-card">
+      <a target={external ? "_blank" : "_self"} href={href} rel="noopener noreferrer" class="link-card">
         <figure>
           <slot />
         </figure>
