@@ -1,0 +1,60 @@
+---
+title: "Goodmed application"
+draft: false
+stack: ["React JS", "Meteor JS", "Cordova", "CSS Module"]
+---
+
+import Card from "../../components/Card.astro";
+import { Image } from "astro:assets";
+
+import goodmedImage from "../../assets/goodmed/goodmed-app.png";
+
+# Goodmed application
+
+<p class="intro">
+  I worked on the development of features for Synapse’s B2C application :
+  Goodmed. The purpose of the app is to help users better understand their
+  treatments with reliable information.
+</p>
+
+<div class="tag-container">
+  {frontmatter.stack.map((item, index) => (
+    <span class="tag" key={index}>
+      {item}
+    </span>
+  ))}
+</div>
+
+<hr />
+
+<div class="container">
+  <section>
+    <Card>
+      <Image
+        src={goodmedImage}
+        class="img-shadow"
+        alt="3 screenshots of the Goodmed application"
+      />
+    </Card>
+  </section>
+  <section>
+    <h3>New onboarding</h3>
+    <p>
+    As part of my work on the Goodmed application, I focused on enhancing the user onboarding experience to drive better engagement and improve key metrics. In collaboration withe the product design team we restructured the flow to improve the overall user experience by organizing and prioritizing information more effectively. This approach helped users navigate the app more intuitively.
+    </p>
+    {/* TO DO - make some videos demo of the app */}
+    {/* <Card>video ?</Card> */}
+    <p>
+      Additionally, we also introduced a progress bar, which provided a visual guide and encouraged users to complete the onboarding process. All these improvements contributed to an increase in the conversion rate. Throughout the development process, I ensured that all new features were fully compatible with the existing API, ensuring seamless integration and functionality.
+    </p>
+  </section>
+
+  <section>
+    <h3>Connection Blocking</h3>
+    <p>
+        I also developed features on the backend side like blocking the connection after X unsuccessful login attempts.
+        This was implemented within a backend specifically designed for user management, built in Node.js using TypeORM.
+        The user management handled user authentication and security, ensuring reliable and scalable performance.
+    </p>
+  </section>
+</div>

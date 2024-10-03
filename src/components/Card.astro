@@ -42,8 +42,13 @@ const { href, title, external } = Astro.props;
 
   {
     href ? (
-      <a target={external ? "_blank" : "_self"} href={href} rel="noopener noreferrer" class="link-card">
-        <figure>
+      <a
+        target={external ? "_blank" : "_self"}
+        href={href}
+        rel="noopener noreferrer"
+        class="link-card"
+      >
+        <figure class="link-card__figure">
           <slot />
         </figure>
       </a>
@@ -57,6 +62,10 @@ const { href, title, external } = Astro.props;
   }
 </li>
 <style>
+  li {
+    position: relative;
+  }
+
   .link-card {
     display: flex;
     text-decoration: none;
@@ -68,12 +77,24 @@ const { href, title, external } = Astro.props;
     }
   }
 
+  .title-card:focus + .link-card > .link-card__figure,
+  .title-card:hover + .link-card > .link-card__figure {
+    &:after {
+      opacity: 1;
+    }
+  }
+
+  .title-card:has(+ .link-card:hover) {
+    text-decoration: underline;
+  }
+
   .title-card {
     color: rgb(var(--fg-grey-color));
     text-decoration: none;
     display: inline-flex;
     align-items: center;
     margin-bottom: 1rem;
+    text-underline-offset: 2px;
 
     &:hover {
       text-decoration: underline;
@@ -85,11 +106,42 @@ const { href, title, external } = Astro.props;
     }
   }
 
+  .link-card__figure {
+    position: relative;
+
+    &:after {
+      content: " ";
+      position: absolute;
+      top: 40%;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      border-radius: 8px;
+      
+
+
+      background: linear-gradient(
+        to top,
+        rgba(21, 21, 21, 0.65),
+        rgb(21 21 21 / 0%)
+      );
+
+      background: var(--gradient-card);
+      opacity: 0;
+      transition: opacity 0.2s ease-in-out;
+    }
+  }
+
+  .link-card:hover .link-card__figure::after,
+  .link-card:focus .link-card__figure::after {
+    opacity: 1;
+  }
+
   figure {
     width: 100%;
     margin: 0;
-    max-height: 28rem;
-    min-height: 340px;
+    max-height: 448px;
+    min-height: 420px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -103,6 +155,7 @@ const { href, title, external } = Astro.props;
   @media (max-width: 768px) {
     figure {
       align-items: center;
+      min-height: 340px;
     }
   }
 </style>
