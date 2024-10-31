@@ -1,0 +1,133 @@
+/* reset */
+button,
+fieldset,
+input {
+  all: unset;
+}
+
+.dialog-overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  inset: 0;
+  animation: overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.video--container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 16px solid white;
+  filter: drop-shadow(rgba(0, 0, 0, 0.1) 0px 0px 40px);
+  border-radius: 40px;
+  overflow: hidden;
+  max-width: 640px;
+  margin: 0px auto;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+
+}
+
+@media (max-width: 760px) {
+  .video--container {
+    border: 8px solid white;
+    border-radius: 16px;
+  }
+}
+
+.video--container:hover {
+  filter: drop-shadow(rgba(0, 0, 0, 0.12) 0px 0px 45px);
+  transform: scale(0.95);
+}
+
+.overlay-video {
+  position: absolute;
+  inset: 0px;
+  background-color: rgb(0, 0, 0);
+  opacity: 0;
+  z-index: 100;
+  transition: 0.15s ease-in-out;
+}
+
+.video--container:hover .overlay-video {
+  opacity: 0.5;
+}
+
+.dialog-content {
+  box-shadow:
+    hsl(206 22% 7% / 35%) 0px 10px 38px -10px,
+    hsl(206 22% 7% / 20%) 0px 10px 20px -15px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 320px;
+  max-height: 85vh;
+  max-height: 80vw;
+  animation: contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dialog-content:focus {
+  outline: none;
+}
+
+.button-modal {
+  transform: translateY(-50%);
+  background-color: rgb(45, 129, 255);
+  border-radius: 24px;
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  padding: 0 15px;
+  font-size: 15px;
+  line-height: 1;
+  font-weight: 500;
+  height: 52px;
+  padding: 0px 32px;
+  transition: transform 0.3s;
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  background-color: rgba(0, 0, 0, 0);
+  object-position: 50% 50%;
+}
+
+.video--modal {
+  max-width: 860px;
+  width: 80vw;
+  min-width: 320px;
+}
+
+.button-modal:hover {
+  cursor: pointer;
+  background-color: rgb(20, 98, 214);
+  transform: translateY(-50%) scale(0.95);
+}
+
+@keyframes overlayShow {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes contentShow {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -48%) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}

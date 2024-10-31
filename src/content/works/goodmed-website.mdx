@@ -1,0 +1,95 @@
+---
+title: "Goodmed website"
+draft: false
+stack: ["React JS", "Gatsby JS", "Prismic CMS", "Styled Component"]
+---
+
+import Card from "../../components/Card.astro";
+import { Image } from "astro:assets";
+import ModalComponent from "../../components/demo-modal-component/index.tsx";
+import ClipPathComponent from "../../components/clip-path-component/index.tsx";
+
+import goodmedWebsite from "../../assets/goodmed-website/goodmed-website.png";
+import prismicSlice from "../../assets/goodmed-website/prismic-slice.svg";
+
+# Goodmed application
+
+<p class="intro">
+  As part of the marketing team , I worked on the websites of the Synapse’s products, dont le site de Goodmed.
+  I develop landing page to highlight product features. Also worked on the website’s technical SEO part.
+
+</p>
+
+<div class="tag-container">
+  {frontmatter.stack.map((item, index) => (
+    <span class="tag" key={index}>
+      {item}
+    </span>
+  ))}
+</div>
+
+<hr />
+
+<div class="container">
+  <section>
+    <h3>Missions</h3>
+    <p>
+    As part of the marketing team my main misssion was :
+    <ul class="list-style-active">
+      <li>Designed, developed, and maintained Synapse’s and Goodmed's website</li>
+      <li>Created landing pages and integrated designs to showcase products</li>
+      <li>Developed new website features to increase conversion rates</li>
+      <li>Optimized performance to enhance user experience</li>
+      <li>Optimized SEO structure</li>
+    </ul>
+    </p>
+    <Card caption="The homepage of the Goodmed Website">
+        <div class="card-wrapper">
+            <Image
+                src={goodmedWebsite}
+                class="img-shadow"
+                alt="The homepage of the Goodmed Website"
+            />
+      </div>
+    </Card>
+  </section>
+  <section>
+    <h3>Prismic CMS</h3>
+    {/* TO DO - make some videos demo of the app */}
+    <p>
+      We use Prismic slices who are modular content components that allow developers and content creators to build dynamic, customizable pages with ease. Each slice acts as a flexible building block, which can be reused and rearranged without requiring additional coding. This modularity gives non-technical teams the ability to update content layouts quickly, while still maintaining design consistency. The main advantage of using slices is that they offer great flexibility, enabling teams to scale and adapt content as needed. 
+    </p>
+    <Card caption="A schema of prismic slices">
+      <div class="card-wrapper">
+        <Image
+          src={prismicSlice}
+          class="img-shadow"
+          alt="A schema of prismic slices"
+        />
+      </div>
+    </Card>
+
+  </section>
+
+  <section>
+    <h3>Accesibility and visual enhancements</h3>
+    <p>
+        I used some tools and css technique like Radix UI and clip-path to make the a11y of the website more user friendly and to match the initial design. 
+    </p>
+    <p>
+        Here are some interactive demos of a Modal component and the use of the clip-path property to create images inside shapes.
+    </p>
+
+    <div style="gap: 1rem; display: flex; flex-direction: column;">
+
+    > It's not excatly the same components as on the website due to different stack and some improvements I made when I recreate then.
+
+
+      <ModalComponent client:load />
+
+      <ClipPathComponent client:load />
+
+    </div>
+
+  </section>
+</div>

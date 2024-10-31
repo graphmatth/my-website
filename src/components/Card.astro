@@ -2,10 +2,11 @@
 interface Props {
   title?: string;
   href?: string;
+  caption?: string;
   external?: boolean;
 }
 
-const { href, title, external } = Astro.props;
+const { href, title, external, caption } = Astro.props;
 ---
 
 <li>
@@ -56,6 +57,7 @@ const { href, title, external } = Astro.props;
       <div class="link-card">
         <figure>
           <slot />
+          {caption && <figcaption>{caption}</figcaption>}
         </figure>
       </div>
     )
@@ -138,6 +140,7 @@ const { href, title, external } = Astro.props;
   }
 
   figure {
+    position: relative;
     width: 100%;
     margin: 0;
     max-height: 448px;
@@ -149,7 +152,14 @@ const { href, title, external } = Astro.props;
     border-radius: 8px;
     padding: 0rem 1rem;
     gap: 1rem;
-    align-items: center;
+  }
+
+  figcaption {
+    /* Not so clean I know..  */
+    position: absolute;
+    bottom: -2.5rem;
+    left: 0;
+    color: rgba(var(--fg-grey-color))
   }
 
   @media (max-width: 768px) {
