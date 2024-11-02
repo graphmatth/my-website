@@ -7,7 +7,6 @@ stack: ["React JS", "Gatsby JS", "Prismic CMS", "Styled Component"]
 import Card from "../../components/Card.astro";
 import { Image } from "astro:assets";
 import ModalComponent from "../../components/demo-modal-component/index.tsx";
-import ClipPathComponent from "../../components/clip-path-component/index.tsx";
 
 import goodmedWebsite from "../../assets/goodmed-website/goodmed-website.png";
 import prismicSlice from "../../assets/goodmed-website/prismic-slice.svg";
@@ -55,7 +54,6 @@ import prismicSlice from "../../assets/goodmed-website/prismic-slice.svg";
   </section>
   <section>
     <h3>Prismic CMS</h3>
-    {/* TO DO - make some videos demo of the app */}
     <p>
       We use Prismic slices who are modular content components that allow developers and content creators to build dynamic, customizable pages with ease. Each slice acts as a flexible building block, which can be reused and rearranged without requiring additional coding. This modularity gives non-technical teams the ability to update content layouts quickly, while still maintaining design consistency. The main advantage of using slices is that they offer great flexibility, enabling teams to scale and adapt content as needed. 
     </p>
@@ -77,17 +75,11 @@ import prismicSlice from "../../assets/goodmed-website/prismic-slice.svg";
         I used some tools and css technique like Radix UI and clip-path to make the a11y of the website more user friendly and to match the initial design. 
     </p>
     <p>
-        Here are some interactive demos of a Modal component and the use of the clip-path property to create images inside shapes.
     </p>
 
     <div style="gap: 1rem; display: flex; flex-direction: column;">
 
-    > It's not excatly the same components as on the website due to different stack and some improvements I made when I recreate then.
-
-
-      <ModalComponent client:load />
-
-      <ClipPathComponent client:load />
+      <ModalComponent client:load  />
 
     </div>
 
