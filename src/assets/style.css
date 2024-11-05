@@ -125,8 +125,6 @@ picture {
 
 .link-card img {
   height: 100%;
-  display: flex;
-  flex: 1;
   object-fit: contain;
 }
 
