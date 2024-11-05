@@ -163,7 +163,7 @@ picture {
 }
 
 .video-goodmed video {
-  border-radius: 0.33rem;
+  border-radius: 0.5rem;
   overflow: hidden;
   max-width: 17rem;
   min-width: 14rem;
