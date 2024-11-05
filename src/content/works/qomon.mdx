@@ -8,8 +8,11 @@ import Card from "../../components/Card.astro";
 import { Image } from "astro:assets";
 import ModalComponent from "../../components/demo-modal-component/index.tsx";
 
-import goodmedWebsite from "../../assets/goodmed-website/goodmed-website.png";
-import prismicSlice from "../../assets/goodmed-website/prismic-slice.svg";
+import qomonDashboard from "../../assets/qomon/dashboard.jpg";
+import qomonDashboardWireframe from "../../assets/qomon/dashboard-wireframe.jpg";
+import qomonFormbuilder from "../../assets/qomon/formbuilder.jpg";
+import qomonFormbuilderWireframe from "../../assets/qomon/formbuilder-wireframe.jpg";
+
 
 # Qomon
 
@@ -29,34 +32,45 @@ import prismicSlice from "../../assets/goodmed-website/prismic-slice.svg";
 
 <div class="container" style={{ display: "grid", gap: "4rem" }}>
   <section>
-    <Card caption="The homepage of the Goodmed Website">
+    <Card caption="The dashboard of the Qomon web application">
       <div class="card-wrapper">
         <Image
-          src={goodmedWebsite}
+          src={qomonDashboard}
           class="img-shadow"
-          alt="The homepage of the Goodmed Website"
+          alt="The dashboard's wireframe of the Qomon web application"
         />
       </div>
     </Card>
   </section>
   <section>
-    <Card caption="The homepage of the Goodmed Website">
+    <Card caption="The wireframe of the Qomon web application">
       <div class="card-wrapper">
         <Image
-          src={goodmedWebsite}
+          src={qomonDashboardWireframe}
           class="img-shadow"
-          alt="The homepage of the Goodmed Website"
+          alt="The dashboard's wireframe of the Qomon web application"
         />
       </div>
     </Card>
   </section>
   <section>
-    <Card caption="The homepage of the Goodmed Website">
+    <Card caption="The formbuilder of the Qomon web application">
       <div class="card-wrapper">
         <Image
-          src={goodmedWebsite}
+          src={qomonFormbuilder}
           class="img-shadow"
-          alt="The homepage of the Goodmed Website"
+          alt="The formbuilder of the Qomon web application"
+        />
+      </div>
+    </Card>
+  </section>
+  <section>
+    <Card caption="The wireframe formbuilder of the Qomon web application">
+      <div class="card-wrapper">
+        <Image
+          src={qomonFormbuilderWireframe}
+          class="img-shadow"
+          alt="The  wireframe's formbuilder of the Qomon web application"
         />
       </div>
     </Card>
