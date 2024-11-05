@@ -1,0 +1,64 @@
+---
+title: "Qomon"
+draft: false
+stack: ["Sketch", "Vue JS", "SCSS"]
+---
+
+import Card from "../../components/Card.astro";
+import { Image } from "astro:assets";
+import ModalComponent from "../../components/demo-modal-component/index.tsx";
+
+import goodmedWebsite from "../../assets/goodmed-website/goodmed-website.png";
+import prismicSlice from "../../assets/goodmed-website/prismic-slice.svg";
+
+# Qomon
+
+<p class="intro">
+  Qomom is a campaign management application. I contributed to the UI adaptation and web integration of the application’s interfaces using Vue.js, based on wireframes and a GUI, ensuring design consistency and user experience requirements.
+</p>
+
+<div class="tag-container">
+  {frontmatter.stack.map((item, index) => (
+    <span class="tag" key={index}>
+      {item}
+    </span>
+  ))}
+</div>
+
+<hr />
+
+<div class="container" style={{ display: "grid", gap: "4rem" }}>
+  <section>
+    <Card caption="The homepage of the Goodmed Website">
+      <div class="card-wrapper">
+        <Image
+          src={goodmedWebsite}
+          class="img-shadow"
+          alt="The homepage of the Goodmed Website"
+        />
+      </div>
+    </Card>
+  </section>
+  <section>
+    <Card caption="The homepage of the Goodmed Website">
+      <div class="card-wrapper">
+        <Image
+          src={goodmedWebsite}
+          class="img-shadow"
+          alt="The homepage of the Goodmed Website"
+        />
+      </div>
+    </Card>
+  </section>
+  <section>
+    <Card caption="The homepage of the Goodmed Website">
+      <div class="card-wrapper">
+        <Image
+          src={goodmedWebsite}
+          class="img-shadow"
+          alt="The homepage of the Goodmed Website"
+        />
+      </div>
+    </Card>
+  </section>
+</div>
