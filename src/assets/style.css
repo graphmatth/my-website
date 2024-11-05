@@ -156,7 +156,7 @@ picture {
   flex-wrap: nowrap;
   gap: 1rem;
   overflow-x: auto;
-  background-color: "var(--background-card)";
+  background-color: var(--background-card);
   padding: 2rem;
   border-radius: 8px;
   margin: 2.5rem 0;
