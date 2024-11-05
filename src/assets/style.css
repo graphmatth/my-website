@@ -190,11 +190,7 @@ nav ul {
   gap: 0.2rem;
 }
 
-footer {
-  border-top: 1px solid rgba(var(--fg-color), 0.085);
-  padding-top: 2.5rem;
-  margin-top: 2.5rem;
-}
+
 
 footer li {
   color: var(--text-color);

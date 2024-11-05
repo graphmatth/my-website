@@ -7,8 +7,8 @@ interface Props {
 const { title, description } = Astro.props;
 import "../assets/style.css";
 
-const metaTitle = title || "Matthieu Caron - Frontend developer";
-const metaDescription = description || "Portfolio of Matthieu Caron";
+const metaTitle = title || "404 | Matthieu Caron - Frontend developer";
+const metaDescription = description || "404 page";
 ---
 
 <!doctype html>
@@ -18,8 +18,7 @@ const metaDescription = description || "Portfolio of Matthieu Caron";
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-    <title>{metaTitle}</title>
-    <meta name="description" content={metaDescription} />
+    <title>404</title>
     <meta name="generator" content={Astro.generator} />
     <meta content={metaTitle} property="og:title" />
     <meta content={metaTitle} property="twitter:title" />
@@ -35,24 +34,8 @@ const metaDescription = description || "Portfolio of Matthieu Caron";
     />
     <meta property="og:type" content="website" />
     <meta content="summary_large_image" name="twitter:card" />
-
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "CreativeWork",
-        "name": "Portfolio of Matthieu Caron",
-        "creator": {
-          "@type": "Person",
-          "name": "Matthieu Caron"
-        },
-        "description": "My frontend portfolio using Astro",
-        "dateCreated": "2024-11-12",
-        "url": "https://matthieucaron.fr",
-        "image": "https://matthieucaron.fr/og-image.jpg"
-      }
-    </script>
   </head>
-  <body>
+  <body style="min-height: 100dvh;">
     <!-- TO DO, Astro component <Nav />  -->
     <nav>
       <a href="/" class="home-icon" aria-label="home" title="home"> </a>
@@ -105,7 +88,11 @@ const metaDescription = description || "Portfolio of Matthieu Caron";
       </ul>
     </nav>
     <main>
-      <slot />
+      <h1 style={{ fontSize: "5rem" }}>404</h1>
+
+      <div class="footer-links">
+        <a href="/" style={{ fontSize: "2rem", textUnderlineOffset: "10px"}}>Go Home</a>
+      </div>
     </main>
     <!-- TO DO, Astro component <Footer />  -->
     <footer>
@@ -150,16 +137,32 @@ const metaDescription = description || "Portfolio of Matthieu Caron";
     </footer>
 
     <script>
-      import { initThemeToggle } from "./themeToggle.ts";
+      import { initThemeToggle } from "../layouts/themeToggle";
       document.addEventListener("DOMContentLoaded", initThemeToggle);
     </script>
 
     <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100dvh;
+        align-items: space-between;
+      }
+
+      main {
+        margin: 0 auto;
+      }
+
+      nav {
+        margin-top: inherit;
+      }
+
       footer {
         border-top: 1px solid rgba(var(--fg-color), 0.085);
-        padding-top: 2.5rem;
-        margin-top: 2.5rem;
+        padding-top: 0.5rem;
+        margin-bottom: 0.5rem;
       }
+
       .home-icon {
         width: 1rem;
         height: 1rem;
