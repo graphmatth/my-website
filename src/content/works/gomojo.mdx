@@ -1,0 +1,79 @@
+---
+title: "Go Mojo"
+draft: false
+stack: ["React JS", "React Native", "Chakra UI", "UI Design"]
+---
+
+import Card from "../../components/Card.astro";
+import { Image } from "astro:assets";
+
+import home from "../../assets/gomojo/home.jpg";
+import leaderboard from "../../assets/gomojo/leaderboard.jpg";
+import vaultRoom from "../../assets/gomojo/vault-room.jpg";
+import keep from "../../assets/gomojo/keep-the-mojo.jpg";
+
+# Go Mojo
+
+<p class="intro">
+  Go Mojo is a free gaming platform offered by the FDJ group. I initially worked
+  on adapting the UI for various games, then worked on the frontend development
+  using React JS and React Native for the mobile applicaion to ensure a smooth
+  and engaging user experience.
+</p>
+
+<div class="tag-container">
+  {frontmatter.stack.map((item, index) => (
+    <span class="tag" key={index}>
+      {item}
+    </span>
+  ))}
+</div>
+
+<hr />
+
+<div class="container" style={{ display: "grid", gap: "4rem" }}>
+  <section>
+    <Card caption="The homepage">
+      <div class="card-wrapper">
+        <Image
+          src={home}
+          class="img-shadow"
+          alt="The homepage of Go Mojo"
+        />
+      </div>
+    </Card>
+  </section>
+  <section>
+    <Card caption="The leaderboard">
+      <div class="card-wrapper">
+        <Image
+          src={leaderboard}
+          class="img-shadow"
+          alt="The leaderboard of Go Mojo"
+        />
+      </div>
+    </Card>
+  </section>
+  <section>
+    <Card caption="The vault room page">
+      <div class="card-wrapper">
+        <Image
+          src={vaultRoom}
+          class="img-shadow"
+          alt="The vault room page"
+        />
+      </div>
+    </Card>
+  </section>
+  <section>
+    <Card caption="A mini game : Keep the Mojo">
+      <div class="card-wrapper">
+        <Image
+          src={keep}
+          class="img-shadow"
+          alt="A mini game : Keep the Mojo"
+        />
+      </div>
+    </Card>
+  </section>
+</div>
