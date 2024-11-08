@@ -8,6 +8,7 @@ interface Props {
 }
 
 const { href, title, external, caption, className } = Astro.props;
+
 ---
 
 <li>
@@ -67,6 +68,11 @@ const { href, title, external, caption, className } = Astro.props;
 <style>
   li {
     position: relative;
+  }
+
+  .link-card img {
+    height: 100%;
+    object-fit: contain;
   }
 
   .link-card {

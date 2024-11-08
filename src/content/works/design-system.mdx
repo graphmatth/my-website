@@ -6,6 +6,7 @@ stack: ["React JS", "Css-in-Js", "Storybook", "Jest"]
 
 import Card from "../../components/Card.astro";
 import NextLink from "../../components/NextLink.astro";
+import Tags from "../../components/Tags.astro";
 
 import { Image } from "astro:assets";
 import designSystem01 from "../../assets/design-system/ds-datepicker.svg";
@@ -19,13 +20,9 @@ import designSystem03 from "../../assets/design-system/ds-modal.svg";
   design system for Synapse. His name is Boto
 </p>
 
-<div class="tag-container">
-  {frontmatter.stack.map((item, index) => (
-    <span class="tag" key={index}>
-      {item}
-    </span>
-  ))}
-</div>
+
+<Tags tags={frontmatter.stack} />
+
 <hr />
 <p>Here are some of the key technical decisions that were made :</p>
 
@@ -337,7 +334,6 @@ import designSystem03 from "../../assets/design-system/ds-modal.svg";
   </Modal.Footer>
 </Modal>
 ```
-
   </section>
   <section>
       <h3>CSS-in-JS</h3>

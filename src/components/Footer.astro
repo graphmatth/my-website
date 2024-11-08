@@ -1,0 +1,75 @@
+---
+const socialNetwork = [
+  {
+    name: "Mail",
+    url: "mailto:matthieu.caron.pro@gmail.com",
+    external: false,
+  },
+  {
+    name: "Twitter / X",
+    url: "https://x.com/graphmatth",
+    external: true,
+  },
+  {
+    name: "Github",
+    url: "https://github.com/graphmatth",
+    external: true,
+  },
+  {
+    name: "Linkedin",
+    url: "https://www.linkedin.com/in/matthieu-caron/",
+    external: true,
+  },
+  {
+    name: "Read.cv",
+    url: "https://read.cv/graphmatth",
+    external: true,
+  },
+];
+---
+
+<footer>
+  <h3>Connect</h3>
+  <ul class="footer-links">
+    {
+      socialNetwork.map((network) => {
+        return (
+          <li>
+            <a href={network.url} target={`${network.external ? "_blank" : "_selft"}`} rel="noopener noreferrer">
+              {network.name}
+            </a>
+          </li>
+        );
+      })
+    }
+  </ul>
+</footer>
+
+<style>
+  footer {
+    border-top: 1px solid rgba(var(--fg-color), 0.085);
+    padding: 2.5rem 1rem 1rem;
+    margin: 0 auto 2.5rem;
+    max-width: 800px;
+    width: 100%;
+  }
+
+  .footer-links {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    & a {
+      color: var(--fg-color);
+      text-underline-offset: 2px;
+    }
+  }
+
+  footer li {
+    color: var(--text-color);
+  }
+  main,
+  nav,
+  footer {
+  }
+</style>

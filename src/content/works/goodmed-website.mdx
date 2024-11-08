@@ -8,7 +8,7 @@ import Card from "../../components/Card.astro";
 import { Image } from "astro:assets";
 import ModalComponent from "../../components/demo-modal-component/index.tsx";
 import NextLink from "../../components/NextLink.astro";
-
+import Tags from "../../components/Tags.astro";
 
 import goodmedWebsite from "../../assets/goodmed-website/goodmed-website.png";
 import prismicSlice from "../../assets/goodmed-website/prismic-slice.svg";
@@ -20,14 +20,7 @@ import prismicSlice from "../../assets/goodmed-website/prismic-slice.svg";
 
 </p>
 
-<div class="tag-container">
-  {frontmatter.stack.map((item, index) => (
-    <span class="tag" key={index}>
-      {item}
-    </span>
-  ))}
-</div>
-
+<Tags tags={frontmatter.stack} />
 <hr />
 
 <div class="container">

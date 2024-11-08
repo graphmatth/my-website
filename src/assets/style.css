@@ -170,49 +170,12 @@ picture {
 /* -------------------------------------------------------------------
   6. Layout (Main, Nav, Footer, etc.)
 ------------------------------------------------------------------- */
-main,
-nav,
-footer {
-  margin: auto;
-  padding: 1rem;
-  max-width: 800px;
-  width: 100%;
-}
 
-nav {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 2.5rem;
-}
-
-nav ul {
-  display: flex;
-  gap: 0.2rem;
-}
-
-
-
-footer li {
-  color: var(--text-color);
-}
-
+/* the container of Works in .mdx files */
 .container {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-}
-
-.tag-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-
-  & .tag {
-    padding: 0.3rem 0.4rem;
-    background-color: var(--background-card);
-    border-radius: 4px;
-    white-space: nowrap;
-  }
 }
 
 .card-wrapper {

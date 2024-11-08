@@ -6,6 +6,7 @@ stack: ["Vue JS", "SCSS", "Sketch"]
 
 import Card from "../../components/Card.astro";
 import NextLink from "../../components/NextLink.astro";
+import Tags from "../../components/Tags.astro";
 
 import { Image } from "astro:assets";
 
@@ -23,13 +24,7 @@ import qomonFormbuilderWireframe from "../../assets/qomon/formbuilder-wireframe.
   requirements.
 </p>
 
-<div class="tag-container">
-  {frontmatter.stack.map((item, index) => (
-    <span class="tag" key={index}>
-      {item}
-    </span>
-  ))}
-</div>
+<Tags tags={frontmatter.stack} />
 
 <hr />
 

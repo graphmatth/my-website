@@ -6,6 +6,7 @@ stack: ["React JS", "React Native", "Chakra UI", "UI Design"]
 
 import Card from "../../components/Card.astro";
 import NextLink from "../../components/NextLink.astro";
+import Tags from "../../components/Tags.astro";
 
 import { Image } from "astro:assets";
 
@@ -23,13 +24,7 @@ import keep from "../../assets/gomojo/keep-the-mojo.jpg";
   and engaging user experience.
 </p>
 
-<div class="tag-container">
-  {frontmatter.stack.map((item, index) => (
-    <span class="tag" key={index}>
-      {item}
-    </span>
-  ))}
-</div>
+<Tags tags={frontmatter.stack} />
 
 <hr />
 
