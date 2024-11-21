@@ -1,17 +1,22 @@
 ---
+type cssVar = {
+  [key: `--${string}`]: string | number;
+};
+
 interface Props {
   title?: string;
   href?: string;
   caption?: string;
   external?: boolean;
   className?: boolean;
+  style?: cssVar;
 }
 
-const { href, title, external, caption, className } = Astro.props;
+const { href, title, external, caption, className, style } = Astro.props;
 
 ---
 
-<li>
+<div data-animate style={style}>
   {
     title &&
       (href ? (
@@ -64,9 +69,9 @@ const { href, title, external, caption, className } = Astro.props;
       </div>
     )
   }
-</li>
+</div>
 <style>
-  li {
+  div {
     position: relative;
   }
 

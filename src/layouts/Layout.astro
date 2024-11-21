@@ -12,6 +12,13 @@ const metaDescription = description || "Portfolio of Matthieu Caron";
 
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
+
+interface Props {
+  footerStager?: number;
+}
+
+const  { footerStager } = Astro.props
+
 ---
 
 <!doctype html>
@@ -60,7 +67,7 @@ import Footer from "../components/Footer.astro";
     <main>
       <slot />
     </main>
-    <Footer />
+    <Footer stager={footerStager} />
   </body>
 </html>
 

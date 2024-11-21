@@ -15,19 +15,20 @@ import qomonDashboard from "../assets/qomon/dashboard.jpg";
 import gomojo from "../assets/gomojo/home.jpg";
 ---
 
-<Layout>
-  <h1>
+<Layout footerStager={7}>
+  <h1 data-animate style="--stagger: 2">
     Matthieu Caron <span> – Frontend developer</span>
   </h1>
-  <p class="intro">
+  <p class="intro" data-animate style="--stagger: 2">
     I’m a Frontend Developer with a strong focus on crafting intuitive and
     engaging user interfaces. I like to works on products, design system and
     websites.
   </p>
-  <hr />
-  <h2 id="works" class="works-title">Selected Works</h2>
-  <ul role="list" class="link-card-grid">
-    <Card href="/design-system" title="Synapse Design System">
+  <hr data-animate style="--stagger: 2" />
+  
+  <h2 id="works" class="works-title" data-animate style="--stagger: 3">Selected Works</h2>
+  <ul data-animate role="list" class="link-card-grid">
+    <Card  style={{ "--stagger": 4 }} href="/design-system" title="Synapse Design System">
       <div
         style={{
           display: "flex",
@@ -53,7 +54,7 @@ import gomojo from "../assets/gomojo/home.jpg";
         />
       </div>
     </Card>
-    <Card href="/goodmed-application" title="Goodmed application">
+    <Card style={{ "--stagger": 4 }}  href="/goodmed-application" title="Goodmed application">
       <Image
         style="width: auto"
         src={goodmed04}
@@ -61,7 +62,7 @@ import gomojo from "../assets/gomojo/home.jpg";
       />
     </Card>
 
-    <Card href="goodmed-website" title="Goodmed website">
+    <Card style={{ "--stagger": 5 }}  href="goodmed-website" title="Goodmed website">
       <div class="card-wrapper">
         <Image
           src={goodmedWebsite}
@@ -71,13 +72,13 @@ import gomojo from "../assets/gomojo/home.jpg";
       </div>
     </Card>
 
-    <Card href="gomojo" title="Go Mojo">
+    <Card style={{ "--stagger": 6 }}  href="gomojo" title="Go Mojo">
       <div class="card-wrapper">
         <Image src={gomojo} class="img-shadow" alt="Go Mojo homepage" />
       </div>
     </Card>
 
-    <Card href="qomon" title="Qomon application">
+    <Card style={{ "--stagger": 7 }}  href="qomon" title="Qomon application">
       <div class="card-wrapper">
         <Image
           src={qomonDashboard}

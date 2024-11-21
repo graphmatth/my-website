@@ -11,20 +11,21 @@ import Tags from "../../components/Tags.astro";
 
 import goodmedImage from "../../assets/goodmed/goodmed-app.png";
 
-# Goodmed application
 
-<p class="intro">
-  I worked on the development of features for Synapse’s B2C application :
+<h1 data-animate style="--stagger: 2">
+  Goodmed application
+</h1>
+
+<p class="intro" data-animate style="--stagger: 2">I worked on the development of features for Synapse’s B2C application :
   Goodmed. The purpose of the app is to help users better understand their
-  treatments with reliable information.
-</p>
+  treatments with reliable information.</p>
 
 
 <Tags tags={frontmatter.stack} />
-<hr />
+<hr data-animate style="--stagger: 2" />
 
 <div class="container">
-  <section>
+  <section data-animate style="--stagger: 3">
     <Card>
       <Image
         src={goodmedImage}
@@ -33,7 +34,7 @@ import goodmedImage from "../../assets/goodmed/goodmed-app.png";
       />
     </Card>
   </section>
-  <section>
+  <section data-animate style="--stagger:4">
     <h3>New onboarding</h3>
     <p>
     As part of my work on the Goodmed application, I focused on enhancing the user onboarding experience to drive better engagement and improve key metrics. In collaboration withe the product design team we restructured the flow to improve the overall user experience by organizing and prioritizing information more effectively. This approach helped users navigate the app more intuitively.

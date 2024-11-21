@@ -13,21 +13,21 @@ import designSystem01 from "../../assets/design-system/ds-datepicker.svg";
 import designSystem02 from "../../assets/design-system/ds-select.svg";
 import designSystem03 from "../../assets/design-system/ds-modal.svg";
 
-# Design System – <span>Boto</span>
+<h1 data-animate style="--stagger: 2">
+  Design System – <span>Boto</span>
+</h1>
 
-<p class="intro">
-  As part of the Design System team, I participate in the conception of the new
-  design system for Synapse. His name is Boto
-</p>
-
+<p class="intro" data-animate style="--stagger: 2">As part of the Design System team, I participate in the conception of the new
+  design system for Synapse. His name is Boto</p>
 
 <Tags tags={frontmatter.stack} />
 
-<hr />
-<p>Here are some of the key technical decisions that were made :</p>
+<hr data-animate style="--stagger: 2" />
+
 
 <div class="container">
-  <section>
+<p data-animate style="--stagger: 3">Here are some of the key technical decisions that were made :</p>
+  <section data-animate style="--stagger: 4">
     <h3>Compound component</h3>
     <p>
       Compound component provided more flexibility to the developer when needed
@@ -335,7 +335,7 @@ import designSystem03 from "../../assets/design-system/ds-modal.svg";
 </Modal>
 ```
   </section>
-  <section>
+  <section data-animate style="--stagger: 5">
       <h3>CSS-in-JS</h3>
       <p>
         We chose a CSS-in-JS solution because it provides scoped and modular
@@ -354,7 +354,7 @@ import designSystem03 from "../../assets/design-system/ds-modal.svg";
     <Image src={designSystem02} class="hide-tablet  img-shadow" alt="modal component" />
   </Card>
   </section>
-  <section>
+  <section data-animate style="--stagger: 6">
         <h3>Accesibility</h3>
         <p>
         We had a strong focus on accesibility to make sure that all components are usable by as many people as possible, including individuals with disabilities.
@@ -365,7 +365,7 @@ import designSystem03 from "../../assets/design-system/ds-modal.svg";
 
   </section>
 
-  <section>
+  <section data-animate style="--stagger: 6">
   <h3>Theming with css variables</h3>
   <p>
     We use CSS variables for tokens and theming, allowing us to maintain a
@@ -405,20 +405,21 @@ import designSystem03 from "../../assets/design-system/ds-modal.svg";
 ```
 
 </section>
-<section>
+<section data-animate style="--stagger: 7">
 
-  <h3>Documentation</h3>
-  <p>
-    We created documentation that determines the proptypes using an AST parser,
-    and we also developed a Storybook version to test the component in
-    isolation. I helped in distribute technical documentation, planning the
-    release cycles, communications with the designers, and in gathering
-    feedbacks from developers.
-  </p>
+<h3>Documentation</h3>
+<p>
+  We created documentation that determines the proptypes using an AST parser,
+  and we also developed a Storybook version to test the component in isolation.
+  I helped in distribute technical documentation, planning the release cycles,
+  communications with the designers, and in gathering feedbacks from developers.
+</p>
 
-  <NextLink to="/goodmed-application" style="margin-top: 2rem">
-    Goodmed application
-  </NextLink>
+{" "}
+
+<NextLink to="/goodmed-application" style="margin-top: 2rem">
+  Goodmed application
+</NextLink>
 
 </section>
 
