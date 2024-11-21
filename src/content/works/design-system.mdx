@@ -13,27 +13,22 @@ import designSystem01 from "../../assets/design-system/ds-datepicker.svg";
 import designSystem02 from "../../assets/design-system/ds-select.svg";
 import designSystem03 from "../../assets/design-system/ds-modal.svg";
 
-<h1 data-animate style="--stagger: 2">
-  Design System – <span>Boto</span>
-</h1>
+<h1 data-animate style="--stagger: 2; margin-bottom: 1rem">Design System – <span>Boto</span></h1>
 
-<p class="intro" data-animate style="--stagger: 2">As part of the Design System team, I participate in the conception of the new
-  design system for Synapse. His name is Boto</p>
+<p class="intro" data-animate style="--stagger: 2; margin-bottom: 1rem">As part of the Design System team, I participate in the conception of the new design system for Synapse. His name is Boto</p>
 
 <Tags tags={frontmatter.stack} />
 
 <hr data-animate style="--stagger: 2" />
 
-
 <div class="container">
-<p data-animate style="--stagger: 3">Here are some of the key technical decisions that were made :</p>
-  <section data-animate style="--stagger: 4">
+  <section data-animate style="--stagger: 3">
+    <p>Here are some of the key technical decisions that were made :</p>
     <h3>Compound component</h3>
-    <p>
-      Compound component provided more flexibility to the developer when needed
-      and offered better separation of concerns for improved maintainability.
-    </p>
-    <div style="color: var(--text-color); background-color: var(--background-card); border-radius: 8px;">
+    <p>Compound component provided more flexibility to the developer when needed
+      and offered better separation of concerns for improved maintainability.</p>
+    <div>
+    <div style="color: var(--text-color); background-color: var(--background-card); border-radius: 8px; margin-bottom: 0.5rem">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="3683"
@@ -311,7 +306,7 @@ import designSystem03 from "../../assets/design-system/ds-modal.svg";
     </defs>
 
 </svg>
-    </div>
+</div>
 ```tsx
 <Modal>
   <Modal.Header>
@@ -334,15 +329,14 @@ import designSystem03 from "../../assets/design-system/ds-modal.svg";
   </Modal.Footer>
 </Modal>
 ```
+</div>
   </section>
-  <section data-animate style="--stagger: 5">
+  <section data-animate style="--stagger: 4">
       <h3>CSS-in-JS</h3>
-      <p>
-        We chose a CSS-in-JS solution because it provides scoped and modular
+      <p>We chose a CSS-in-JS solution because it provides scoped and modular
         styles, preventing global namespace pollution and ensuring that styles
         are tightly coupled with their respective components. This approach also
-        allows for dynamic styling based on component state or props.
-      </p>
+        allows for dynamic styling based on component state or props.</p>
   
   <Card>
     <Image
@@ -354,24 +348,20 @@ import designSystem03 from "../../assets/design-system/ds-modal.svg";
     <Image src={designSystem02} class="hide-tablet  img-shadow" alt="modal component" />
   </Card>
   </section>
-  <section data-animate style="--stagger: 6">
+  <section data-animate style="--stagger: 5">
         <h3>Accesibility</h3>
-        <p>
-        We had a strong focus on accesibility to make sure that all components are usable by as many people as possible, including individuals with disabilities.
+        <p>We had a strong focus on accesibility to make sure that all components are usable by as many people as possible, including individuals with disabilities.
         To achieve this, we follow best practices such as adhering to the W3C best practices.
         Each component is designed to support keyboard navigation, providing clear focus states for interactive elements.
-        Semantic HTML tags are used to ensure that screen readers can correctly interpret the content. Additionally, we incorporate ARIA attributes where necessary to enhance assistive technology support.
-        </p>
+        Semantic HTML tags are used to ensure that screen readers can correctly interpret the content. Additionally, we incorporate ARIA attributes where necessary to enhance assistive technology support.</p>
 
   </section>
 
   <section data-animate style="--stagger: 6">
   <h3>Theming with css variables</h3>
-  <p>
-    We use CSS variables for tokens and theming, allowing us to maintain a
+  <p>We use CSS variables for tokens and theming, allowing us to maintain a
     consistent design system across the application while making it simple to
-    switch themes and adjust styles dynamically.
-  </p>
+    switch themes and adjust styles dynamically.</p>
 
 ```css
 :root {
@@ -408,19 +398,16 @@ import designSystem03 from "../../assets/design-system/ds-modal.svg";
 <section data-animate style="--stagger: 7">
 
 <h3>Documentation</h3>
-<p>
-  We created documentation that determines the proptypes using an AST parser,
+<p>We created documentation that determines the proptypes using an AST parser,
   and we also developed a Storybook version to test the component in isolation.
   I helped in distribute technical documentation, planning the release cycles,
-  communications with the designers, and in gathering feedbacks from developers.
-</p>
+  communications with the designers, and in gathering feedbacks from developers.</p>
 
-{" "}
-
-<NextLink to="/goodmed-application" style="margin-top: 2rem">
-  Goodmed application
-</NextLink>
 
 </section>
+
+<NextLink stagger={8} to="/goodmed-application">
+  Goodmed application
+</NextLink>
 
 </div>

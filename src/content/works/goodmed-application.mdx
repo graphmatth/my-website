@@ -12,15 +12,11 @@ import Tags from "../../components/Tags.astro";
 import goodmedImage from "../../assets/goodmed/goodmed-app.png";
 
 
-<h1 data-animate style="--stagger: 2">
-  Goodmed application
-</h1>
+<h1 data-animate style="--stagger: 2; margin-bottom: 1rem">Goodmed application</h1>
 
-<p class="intro" data-animate style="--stagger: 2">I worked on the development of features for Synapse’s B2C application :
+<p class="intro" data-animate style="--stagger: 2; margin-bottom: 1rem">I worked on the development of features for Synapse’s B2C application :
   Goodmed. The purpose of the app is to help users better understand their
   treatments with reliable information.</p>
-
-
 <Tags tags={frontmatter.stack} />
 <hr data-animate style="--stagger: 2" />
 
@@ -36,10 +32,7 @@ import goodmedImage from "../../assets/goodmed/goodmed-app.png";
   </section>
   <section data-animate style="--stagger:4">
     <h3>New onboarding</h3>
-    <p>
-    As part of my work on the Goodmed application, I focused on enhancing the user onboarding experience to drive better engagement and improve key metrics. In collaboration withe the product design team we restructured the flow to improve the overall user experience by organizing and prioritizing information more effectively. This approach helped users navigate the app more intuitively.
-    </p>
-    {/* TO DO - make some videos demo of the app */}
+    <p>As part of my work on the Goodmed application, I focused on enhancing the user onboarding experience to drive better engagement and improve key metrics. In collaboration withe the product design team we restructured the flow to improve the overall user experience by organizing and prioritizing information more effectively. This approach helped users navigate the app more intuitively.</p>
     <div className="video-goodmed">
       <video autoplay muted playsinline loop width="100%" src="/goodmed-app/goodmed-intro.mp4">
         Your browser does not support HTML5 video.
@@ -51,18 +44,13 @@ import goodmedImage from "../../assets/goodmed/goodmed-app.png";
         Your browser does not support HTML5 video.
       </video>
     </div>
-    <p>
-      Additionally, we also introduced a progress bar, which provided a visual guide and encouraged users to complete the onboarding process. All these improvements contributed to an increase in the conversion rate. Throughout the development process, I ensured that all new features were fully compatible with the existing API, ensuring seamless integration and functionality.
-    </p>
+    <p>Additionally, we also introduced a progress bar, which provided a visual guide and encouraged users to complete the onboarding process. All these improvements contributed to an increase in the conversion rate. Throughout the development process, I ensured that all new features were fully compatible with the existing API, ensuring seamless integration and functionality.</p>
     <h3>Connection Blocking</h3>
-    <p>
-        I also developed features on the backend side like blocking the connection after X unsuccessful login attempts.
+    <p>I also developed features on the backend side like blocking the connection after X unsuccessful login attempts.
         This was implemented within a backend specifically designed for user management, built in Node.js using TypeORM.
-        The user management handled user authentication and security, ensuring reliable and scalable performance.
-    </p>
-    <NextLink to="/goodmed-website">
-      Goodmed website
-    </NextLink>
+        The user management handled user authentication and security, ensuring reliable and scalable performance.</p>
   </section>
-
+  <NextLink to="/goodmed-website" stagger={5}>
+    Goodmed website
+  </NextLink>
 </div>

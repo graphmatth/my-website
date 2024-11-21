@@ -13,7 +13,6 @@ interface Props {
 }
 
 const { href, title, external, caption, className, style } = Astro.props;
-
 ---
 
 <div data-animate style={style}>
@@ -54,16 +53,20 @@ const { href, title, external, caption, className, style } = Astro.props;
         target={external ? "_blank" : "_self"}
         href={href}
         rel="noopener noreferrer"
-        class={`${className} link-card`}
+        class={`${className || ""} link-card`}
       >
-        <figure class="link-card__figure">
-          <slot />
+        <figure>
+          <div class="card__figure-container link-card__figure">
+            <slot />
+          </div>
         </figure>
       </a>
     ) : (
       <div class="link-card">
         <figure>
-          <slot />
+          <div class="card__figure-container">
+            <slot />
+          </div>
           {caption && <figcaption>{caption}</figcaption>}
         </figure>
       </div>
@@ -73,6 +76,11 @@ const { href, title, external, caption, className, style } = Astro.props;
 <style>
   div {
     position: relative;
+  }
+
+  figure {
+    width: 100%;
+    margin: 0;
   }
 
   .link-card img {
@@ -149,7 +157,7 @@ const { href, title, external, caption, className, style } = Astro.props;
     opacity: 1;
   }
 
-  figure {
+  .card__figure-container {
     position: relative;
     width: 100%;
     margin: 0;
@@ -165,11 +173,8 @@ const { href, title, external, caption, className, style } = Astro.props;
   }
 
   figcaption {
-    /* Not so clean I know..  */
-    position: absolute;
-    bottom: -1.8rem;
-    left: 0;
     color: rgba(var(--fg-grey-color));
+    margin-top: 0.7rem;
   }
 
   @media (max-width: 768px) {

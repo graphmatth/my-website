@@ -3,15 +3,17 @@ import type { CSSProperty } from "astro/types";
 
 interface Props {
   style?: CSSProperty;
-  to: string
+  to: string;
+  stagger?: number
 }
 
-const { style, to } = Astro.props
+const { style, to, stagger = 3 } = Astro.props
 ---
 
 <a
   href={to}
-  style={style}
+  data-animate
+  style={`--stagger: ${stagger}; ${style || ""}`}
 >
   <slot />
   <svg
@@ -29,13 +31,11 @@ const { style, to } = Astro.props
   </svg>
 </a>
 
-
 <style>
     a {
         color: var(--fg-color);
         text-underline-offset: 2px;
         display: inline-flex;
         align-items: center;
-        margin-top: 2rem;
     }
 </style>

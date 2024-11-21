@@ -13,11 +13,11 @@ import Tags from "../../components/Tags.astro";
 import goodmedWebsite from "../../assets/goodmed-website/goodmed-website.png";
 import prismicSlice from "../../assets/goodmed-website/prismic-slice.svg";
 
-<h1 data-animate style="--stagger: 2">Goodmed website</h1>
+<h1 data-animate style="--stagger: 2; margin-bottom: 1rem">Goodmed website</h1>
 
-<p class="intro" data-animate style="--stagger: 2">As part of the marketing team, I worked on the websites for Synapse’s
-products, including the Goodmed site. I developed landing pages to showcase
-product features and also worked on the technical SEO aspects of the website.</p>
+<p class="intro" data-animate style="--stagger: 2; margin-bottom: 1rem">As part of the marketing team, I worked on the websites for Synapse’s
+  products, including the Goodmed site. I developed landing pages to showcase
+  product features and also worked on the technical SEO aspects of the website.</p>
 <Tags tags={frontmatter.stack} />
 <hr data-animate style="--stagger: 2" />
 
@@ -68,9 +68,8 @@ product features and also worked on the technical SEO aspects of the website.</p
       <ModalComponent client:load  />
     </div>
 
-    <NextLink to="/gomojo" style="margin-top: 1rem">
-      Go Mojo
-    </NextLink>
-
   </section>
+  <NextLink to="/gomojo" stagger={3}>
+    Go Mojo
+  </NextLink>
 </div>

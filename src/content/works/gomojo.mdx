@@ -15,9 +15,9 @@ import leaderboard from "../../assets/gomojo/leaderboard.jpg";
 import vaultRoom from "../../assets/gomojo/vault-room.jpg";
 import keep from "../../assets/gomojo/keep-the-mojo.jpg";
 
-<h1 data-animate style="--stagger: 2">Go Mojo</h1>
+<h1 data-animate style="--stagger: 2; margin-bottom: 1rem">Go Mojo</h1>
 
-<p class="intro" data-animate style="--stagger: 2">Go Mojo is a free gaming platform offered by the FDJ group. I initially worked
+<p class="intro" data-animate style="--stagger: 2; margin-bottom: 1rem">Go Mojo is a free gaming platform offered by the FDJ group. I initially worked
   on adapting the UI for various games, then worked on the frontend development
   using React JS and React Native for the mobile applicaion to ensure a smooth
   and engaging user experience.</p>
@@ -26,7 +26,7 @@ import keep from "../../assets/gomojo/keep-the-mojo.jpg";
 
 <hr data-animate style="--stagger: 2" />
 
-<div class="container" style={{ display: "grid", gap: "4rem" }}>
+<div class="container">
   <section data-animate style="--stagger: 3">
     <Card caption="The homepage">
       <div class="card-wrapper">
@@ -71,8 +71,8 @@ import keep from "../../assets/gomojo/keep-the-mojo.jpg";
       </div>
     </Card>
 
-    <NextLink to="/qomon" style="margin-top: 2rem">
-      Qomon
-    </NextLink>
   </section>
+  <NextLink to="/qomon" stagger={7}>
+    Qomon
+  </NextLink>
 </div>

@@ -15,9 +15,10 @@ import qomonDashboardWireframe from "../../assets/qomon/dashboard-wireframe.jpg"
 import qomonFormbuilder from "../../assets/qomon/formbuilder.jpg";
 import qomonFormbuilderWireframe from "../../assets/qomon/formbuilder-wireframe.jpg";
 
-<h1 data-animate style="--stagger: 2">Qomon</h1>
+<h1 data-animate style="--stagger: 2; margin-bottom: 1rem">Qomon</h1>
 
-<p class="intro" data-animate style="--stagger: 2">Qomom is a campaign management application. I contributed to the UI adaptation and web integration of the application’s interfaces using Vue.js, based on
+<p class="intro" data-animate style="--stagger: 2; margin-bottom: 1rem">Qomom is a campaign management application. I contributed to the UI adaptation
+  and web integration of the application’s interfaces using Vue.js, based on
   wireframes and a GUI, ensuring design consistency and user experience
   requirements.</p>
 
@@ -25,7 +26,7 @@ import qomonFormbuilderWireframe from "../../assets/qomon/formbuilder-wireframe.
 
 <hr data-animate style="--stagger: 2" />
 
-<div class="container" style={{ display: "grid", gap: "4rem" }}>
+<div class="container">
   <section data-animate style="--stagger: 3">
     <Card caption="The dashboard of the Qomon web application">
       <div class="card-wrapper">
@@ -70,9 +71,8 @@ import qomonFormbuilderWireframe from "../../assets/qomon/formbuilder-wireframe.
       </div>
     </Card>
 
-    <NextLink to="/" style="margin-top: 2rem">
-        Back to the homepage
-    </NextLink>
-
   </section>
+  <NextLink to="/" stagger={7}>
+      Back to the homepage
+  </NextLink>
 </div>
