@@ -49,7 +49,7 @@ export function initThemeToggle() {
 
   // watch if there is a window.MatchMedia
   const darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-  darkModeMediaQuery.addEventListener("change", (e: MediaQueryListEvent) => {
+  darkModeMediaQuery.addEventListener("change", () => {
     const currentTheme = localStorage.getItem("theme") as Theme;
     if (currentTheme === THEME_SYSTEM) {
       applyTheme(THEME_SYSTEM);

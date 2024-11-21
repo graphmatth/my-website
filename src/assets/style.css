@@ -109,13 +109,11 @@ html.dark {
   0% {
     opacity: 0;
     transform: translateY(-10px);
-    filter: blur(2.5px);
   }
 
   to {
     opacity: 1;
     transform: none;
-    filter: blur(0px);
   }
 }
 
@@ -128,7 +126,7 @@ html.dark {
   font-style: normal;
   font-weight: 100 900;
   font-display: swap;
-  src: url("fonts/DMSans[opsz,wght].woff2") format("woff2");
+  src: url("/fonts/DMSans.woff2") format("woff2");
 }
 
 @supports (font-variation-settings: normal) {

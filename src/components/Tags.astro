@@ -6,7 +6,7 @@ interface Props {
 const { tags } = Astro.props
 ---
 <div class="tag-container" data-animate style="--stagger: 2">
-    {tags.map((item, index) => (
+    {tags.map((item) => (
       <span class="tag">
         {item}
       </span>
